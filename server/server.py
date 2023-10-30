@@ -6,7 +6,7 @@ import os
 import uvicorn
 
 
-listen = os.environ.get("DOCKER_NETWORK")
+listen = "0.0.0.0"
 folder = "/servervol"
 datafile = "data.txt"
 checksumfile = "checksum.txt"

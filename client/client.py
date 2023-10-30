@@ -16,7 +16,11 @@ def generate_checksum(data):
 def main(server):
     # Get data and checksum from server
     print("Getting data from server...")
-    response = requests.get(server)
+    try:
+        response = requests.get(server)
+    except:
+        print("Failed to connect to server!")
+        sys.exit(1)
     data, checksum = response.text.split("\n")
     
     # Write data and checksum to files
