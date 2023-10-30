@@ -3,3 +3,4 @@ _pycache_
 .vscode
 data.txt
 checksum.txt
+*.zip

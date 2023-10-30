@@ -33,6 +33,7 @@ Ajamalla create.sh komennon, luodaan kontit ja ajamalla destroy.sh komennon tuho
 ```
 ./destroy.sh
 ```
+create.sh kysyy ennen konttien luomista tarkemmat tiedot konteista.
 
 
 &copy; Risto Lievonen
