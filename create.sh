@@ -18,7 +18,7 @@ read -p "Enter the server port (default 8000): " server_port
 read -p "Enter the CIDR network (default 192.168.99.0/24): " network
 network=${network:-'192.168.99.0/24'}
 server_host=${server_host:-'server'}
-server_host=${server_host:-'8000'}
+server_port=${server_port:-'8000'}
 
 # Export the variables to env file
 echo "DOCKER_NETWORK=$network" > .env
