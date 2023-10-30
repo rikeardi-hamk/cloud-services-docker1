@@ -20,6 +20,10 @@ services:
       - clientvol:/clientvol
     command: python3 client.py ${DOCKER_SERVER_HOST} ${DOCKER_SERVER_PORT}
 
+volumes:
+  servervol:
+  clientvol:
+  
 networks:
   default:
     ipam: 
