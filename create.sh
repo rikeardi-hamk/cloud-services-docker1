@@ -20,9 +20,10 @@ network=${network:-'192.168.99.0/24'}
 server_host=${server_host:-'server'}
 server_host=${server_host:-'8000'}
 
-export DOCKER_NETWORK=$network
-export DOCKER_SERVER_HOST=$server_host
-export DOCKER_SERVER_PORT=$server_port
+# Export the variables to env file
+echo "DOCKER_NETWORK=$network" > .env
+echo "DOCKER_SERVER_HOST=$server_host" >> .env
+echo "DOCKER_SERVER_PORT=$server_port" >> .env
 
 # Create the containers
 case $choice in
