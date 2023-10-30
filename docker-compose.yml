@@ -12,6 +12,7 @@ services:
       - DOCKER_NETWORK=${DOCKER_NETWORK}
       - DOCKER_SERVER_PORT=${DOCKER_SERVER_PORT}
     command: python3 server.py ${DOCKER_SERVER_PORT}
+    restart: on-failure
 
   client:
     build: ./client
@@ -19,11 +20,12 @@ services:
     volumes:
       - clientvol:/clientvol
     command: python3 client.py ${DOCKER_SERVER_HOST} ${DOCKER_SERVER_PORT}
+    restart: on-failure
 
 volumes:
   servervol:
   clientvol:
-  
+
 networks:
   default:
     ipam: 
