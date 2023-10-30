@@ -33,11 +33,11 @@ case $choice in
         ;;
     2)
         echo "Creating Server..."
-        docker-compose up -d server --build
+        docker-compose up -d --build server
         ;;
     3)
         echo "Creating Client..."
-        docker-compose up -d client --build
+        docker-compose up -d --build client
         ;;
     *)
         echo "Invalid choice"
