@@ -23,11 +23,11 @@ Kontti hakee Server-kontin uvicorn -palvelimelta generoidun satunnaisdatan ja se
 
 ## Rakenne
 
-* Server
- * servervol
-  * /servervol
-    * data.txt
-    * checksum.txt
+| Server
+|-- servervol
+  |-- /servervol
+    |-- data.txt
+    |-- checksum.txt
 
 ## Asennus
 
