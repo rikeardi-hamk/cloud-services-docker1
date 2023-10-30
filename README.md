@@ -23,11 +23,28 @@ Kontti hakee Server-kontin uvicorn -palvelimelta generoidun satunnaisdatan ja se
 
 ## Rakenne
 
-| Server
-|-- servervol
+Repo sisältää asennusskriptit create.sh ja destroy.sh, Docker composen asetustiedoston docker-compose.yml ja ohjelmat konttien ajamiseen.
+
+```
+| server
+|-- servervol (docker volume)
   |-- /servervol
-    |-- data.txt
-    |-- checksum.txt
+    |-- data.txt (generated)
+    |-- checksum.txt (calculated)
+|-- /app
+  |-- server.py
+| client
+|-- clientvol (docker volume)
+  |-- /clientvol
+    |-- data.txt (downloaded)
+    |-- checksum.txt (downloaded)
+|-- /app
+  |-- client.py
+create.sh
+destroy.sh
+docker-compose.yml
+README.md
+```
 
 ## Asennus
 
