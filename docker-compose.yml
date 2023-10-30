@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  server:
+    build: ./server
+    hostname: ${DOCKER_SERVER_HOST}
+    ports:
+      - "${DOCKER_SERVER_PORT}:${DOCKER_SERVER_PORT}"
+    volumes:
+      - servervol:/servervol
+    environment:
+      - DOCKER_NETWORK=${DOCKER_NETWORK}
+      - DOCKER_SERVER_PORT=${DOCKER_SERVER_PORT}
+    command: python3 server.py ${DOCKER_SERVER_PORT}
+
+  client:
+    build: ./client
+    hostname: client
+    volumes:
+      - clientvol:/clientvol
+    command: python3 client.py ${DOCKER_SERVER_HOST} ${DOCKER_SERVER_PORT}
+
+networks:
+  default:
+    ipam: 
+      config:
+        - subnet: ${DOCKER_NETWORK}
