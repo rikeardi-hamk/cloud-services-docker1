@@ -5,7 +5,7 @@ services:
     build: ./server
     hostname: ${DOCKER_SERVER_HOST}
     ports:
-      - "${DOCKER_SERVER_PORT}:${DOCKER_SERVER_PORT}"
+      - ${DOCKER_SERVER_PORT}:${DOCKER_SERVER_PORT}
     volumes:
       - servervol:/servervol
     environment:
