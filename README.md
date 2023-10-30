@@ -1,29 +1,38 @@
 # HAMK Pilvipalvelut - Tehtävä 1, Docker
 
-&copy; Risto Lievonen
+Tehtävässä piti luoda 2 Docker-konttia, jotka vaihtavat tietoa keskenään.
 
-## Table of Contents
+### Server
+Kontti generoi satunnaisdataa 1 kt verran ja tallentaa sen servervol -voluumiin nimellä data.txt. Sen jälkeen kontti laskee datalle tarkistussumman (MD5) ja kirjoittaa sen samaan voluumiin nimellä checksum.txt.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+Tämän jälkeen kontti käynnistää uvicorn -http-palvelimen määrättyyn porttiin ja alkaa kuunnella kyselyitä tähän porttiin.
 
-## Installation
+### Client
+Kontti hakee Server-kontin uvicorn -palvelimelta generoidun satunnaisdatan ja sen tarkistussumman ja tallentaa ne clientvol -voluumiin. Sen jälkeen kontti laskee tarkistussumman datasta tarkistaa ladatun tarkistussumman avulla, onko data oikein.
+
+## Sisältö
+
+- [Asennus](#asennus)
+- [Käyttö](#käyttö)
+
+## Asennus
 
 Lataa paketti palvelimelle komennolla
 ```
 git clone https://github.com/rikeardi-hamk/cloud-services-docker1.git
 ```
 
-## Usage
+## Käyttö
 
-Describe how to use the project here.
+Paketin mukana tulee 2 skriptiä, create.sh ja destroy.sh.
 
-## Contributing
+Ajamalla create.sh komennon, luodaan kontit ja ajamalla destroy.sh komennon tuhotaan kontit.
+```
+./create.sh
+```
+```
+./destroy.sh
+```
 
-Explain how others can contribute to the project here.
 
-## License
-
-This project is licensed under the [NAME HERE] license - see the LICENSE.md file for details.
+&copy; Risto Lievonen
