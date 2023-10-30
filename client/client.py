@@ -23,6 +23,9 @@ def main(server):
         sys.exit(1)
     data, checksum = response.text.split("\n")
     
+    print("Data: " + data)
+    print("Checksum: " + checksum)
+    
     # Write data and checksum to files
     print("Writing data to file...")
     file = open(folder + "/" + datafile, "w+")

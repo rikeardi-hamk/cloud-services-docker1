@@ -54,16 +54,18 @@ def main(port = 8000):
     file = open(folder + "/" + datafile, "w+")
     file.write(data)
     file.close()
+    print("Data: " + data)
     
     print("Calculating checksum...")
     checksum = generate_checksum(data)
     file = open(folder + "/" + checksumfile, "w+")
     file.write(checksum)
     file.close()
+    print("Checksum: " + checksum)
     
     print("Data and checksum generated, starting server...")
     
-    config = uvicorn.Config('server:server', host=listen, port=port, log_level="debug")
+    config = uvicorn.Config('server:server', host=listen, port=port, log_level="info")
     server = uvicorn.Server(config)
     server.run()
 

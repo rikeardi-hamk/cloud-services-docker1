@@ -29,15 +29,15 @@ echo "DOCKER_SERVER_PORT=$server_port" >> .env
 case $choice in
     1)
         echo "Creating Server + Client..."
-        docker-compose up -d
+        docker-compose up -d --build
         ;;
     2)
         echo "Creating Server..."
-        docker-compose up -d server
+        docker-compose up -d server --build
         ;;
     3)
         echo "Creating Client..."
-        docker-compose up -d client
+        docker-compose up -d client --build
         ;;
     *)
         echo "Invalid choice"
