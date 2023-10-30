@@ -1,5 +1,16 @@
 # HAMK Pilvipalvelut - Tehtävä 1, Docker
 
+Tämä repo on HAMKin Pilvipalvelut kurssin docker tehtävän toteutus.
+
+## Sisältö
+
+- [Perustiedot](#perustiedot)
+- [Rakenne](#rakenne)
+- [Asennus](#asennus)
+- [Käyttö](#käyttö)
+
+## Perustiedot
+
 Tehtävässä piti luoda 2 Docker-konttia, jotka vaihtavat tietoa keskenään.
 
 ### Server
@@ -10,10 +21,13 @@ Tämän jälkeen kontti käynnistää uvicorn -http-palvelimen määrättyyn por
 ### Client
 Kontti hakee Server-kontin uvicorn -palvelimelta generoidun satunnaisdatan ja sen tarkistussumman ja tallentaa ne clientvol -voluumiin. Sen jälkeen kontti laskee tarkistussumman datasta tarkistaa ladatun tarkistussumman avulla, onko data oikein.
 
-## Sisältö
+## Rakenne
 
-- [Asennus](#asennus)
-- [Käyttö](#käyttö)
+* Server
+ * servervol
+  * /servervol
+    * data.txt
+    * checksum.txt
 
 ## Asennus
 
